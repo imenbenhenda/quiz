@@ -1,0 +1,106 @@
+/* Fond de la page avec un dégradé doux */
+.category-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Ajustement de la taille des cartes */
+  gap: 50px; /* Espacement entre les cartes */
+  padding: 40px;
+  background: linear-gradient(to right, #bdcddd, #7b84fa); /* Dégradé de fond */
+  justify-items: center;
+  align-items: center;
+  box-sizing: border-box;
+  height: 100vh;
+}
+
+  /* Image dans le coin inférieur droit */
+.bottom-right-image {
+  position: fixed;
+  bottom: 20px; /* Distance par rapport au bas */
+  right: 50px; /* Distance par rapport au côté droit */
+  width:500px; /* Taille de l'image */
+  height: 350px; /* Conserve les proportions */
+  border-radius: 20px; /* Coins arrondis */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Ombre subtile */
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+/* Effet au survol */
+.bottom-right-image:hover {
+  transform: scale(1.1); /* Augmentation de la taille au survol */
+}
+
+
+/* Style des cartes avec ombre douce et coins arrondis */
+.category-card {
+  background-color: #ffffff; /* Carte de couleur blanche */
+  border-radius: 20px; /* Coins arrondis pour un aspect plus doux */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); /* Ombre subtile */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  width: 80%;
+  max-width: 300px; /* Taille modérée des cartes */
+  height: 150px; /* Hauteur plus raisonnable */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centrer le contenu verticalement */
+  align-items: center;
+  padding: 30px; /* Augmentation de l'espacement interne */
+  text-align: center;
+  overflow: hidden;
+  border: 1px solid transparent; /* Bordure transparente par défaut */
+}
+
+/* Effet de survol des cartes */
+.category-card:hover {
+  transform: translateY(-10px); /* Décalage au survol */
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée */
+  border: 2px solid #461ab5; /* Bordure colorée au survol */
+}
+
+/* Titre de la catégorie avec une couleur moderne */
+.category-name {
+  font-size: 1.6em; /* Augmentation de la taille de la police */
+  font-weight: 700;
+  color: #3498db; /* Bleu vif et moderne */
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+/* Description avec une couleur plus douce */
+.category-description {
+  font-size: 1.1em; /* Augmentation de la taille de la police */
+  color: #7f8c8d; /* Gris doux pour un contraste agréable */
+  line-height: 1.6; /* Amélioration de l'espacement des lignes */
+  margin-bottom: 15px;
+  transition: color 0.3s ease;
+}
+
+/* Effet de changement de couleur au survol */
+.category-card:hover .category-name {
+  color: #2980b9; /* Couleur bleue un peu plus foncée */
+}
+
+.category-card:hover .category-description {
+  color: #34495e; /* Gris plus foncé au survol */
+}
+
+/* Animation d'effet au clic */
+.category-card:active {
+  transform: scale(0.98); /* Légère réduction au clic */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Ombre plus forte */
+}
+
+/* Ajout d'un effet de dégradé sur le texte au survol */
+.category-card:hover .category-name,
+.category-card:hover .category-description {
+  background: linear-gradient(90deg, #3498db, #2980b9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Ajout d'un effet de transition pour le texte */
+.category-name,
+.category-description {
+  transition: background 0.3s ease, color 0.3s ease;
+}

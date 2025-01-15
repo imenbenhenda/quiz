@@ -1,0 +1,11 @@
+<div class="category-container">
+  <div *ngFor="let category of categories" (click)="onCategoryClick(category)" class="category-card">
+    <div class="category-content">
+      <h3 class="category-name">{{ category.name }}</h3>
+      <p class="category-description">{{ category.description }}</p>
+    </div>
+  </div>
+</div>
+<!-- Image fixe dans le coin inférieur droit -->
+<img src="/assets/images/quiz1 (2).png" alt="Quiz Icon" class="bottom-right-image">
+

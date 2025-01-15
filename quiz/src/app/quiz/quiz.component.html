@@ -1,0 +1,22 @@
+<div *ngIf="questions.length > 0" class="quiz-container">
+  <div class="score-container">
+    <h3>Votre Score: {{ score }}</h3>
+  </div>
+
+  <div class="question-container" *ngFor="let question of questions">
+    <div class="question-text">{{ question.question }}</div>
+    <div class="options">
+      <button
+        class="option-button"
+        (click)="onAnswer(option, question)"
+        [ngClass]="{
+          'correct': question.selected === option && question.isCorrect,
+          'incorrect': question.selected === option && !question.isCorrect
+        }"
+        [disabled]="question.answered"
+        *ngFor="let option of question.options">
+        {{ option }}
+      </button>
+    </div>
+  </div>
+</div>
